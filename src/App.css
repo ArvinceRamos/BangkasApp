@@ -1,0 +1,306 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading-wrapper {
+  padding: 10px 0;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  max-width: 280px;
+  background-color: #fff;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title, .card-text {
+  color: black;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e7e7e7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #007bff;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #0056b3;
+}
+
+.main-wrapper {
+  padding-top: 70px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.search-input {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.activities-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.activity-item {
+  flex: 1;
+  min-width: 200px;
+  max-width: 220px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.activity-item div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.bangkas-grid, .destinations-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.no-results {
+  font-size: 1.5rem;
+  color: red;
+  margin-top: 20px;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.receipt-container {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.outer-container {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-container {
+  width: 100%;
+}
+
+.inner-container {
+  padding: 20px 0;
+}
+
+.booking-card {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+  .bookings-grid, .bangkas-grid, .destinations-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .bookings-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .bookings-grid, .bangkas-grid, .destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bookings-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .bookings-grid, .bangkas-grid, .destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .bookings-grid, .bangkas-grid, .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-input {
+    width: 80%;
+  }
+}
+
+.bookings-heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 90%;
+}
+
+.activities-grid, .bangkas-grid, .destinations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.activities-grid .activity-item, .bangkas-grid .card, .destinations-grid .card {
+  flex: 1 1 calc(20% - 20px);
+  max-width: calc(20% - 20px);
+}
+
+.search-input.fixed-size {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-results {
+  font-size: 1.5rem;
+  color: red;
+  margin-top: 20px;
+}
